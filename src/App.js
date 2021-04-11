@@ -31,6 +31,7 @@ class App extends Component {
     }
   }
   getSnapshotBeforeUpdate(prevProps, prevState) {
+    if (prevState.hits.length === 0) return false;
     if (prevState.hits.length < this.state.hits.length) return true;
     return false;
   }
